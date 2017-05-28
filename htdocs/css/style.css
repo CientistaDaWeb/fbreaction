@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #000;
+}
+#root{
+    width: 1280px;
+    height: 721px;
+    left: 50%;
+    top: 50%;
+    margin-left: -640px;
+    margin-top: -360px;
+    display: block;
+    position: absolute;
+    background: url('../images/toddy_x_nescau.png') top left no-repeat;
+    background-size: cover;
+}
+#reaction-like, #reaction-love{
+    width: 482px;
+    height: 125px;
+    text-align: center;
+    bottom: 0;
+    position: absolute;
+    color: #FFF;
+    font-size: 90px;
+}
+#reaction-love{
+    left: 70px;
+}
+#reaction-like{
+    right: 70px;
+}

@@ -1,0 +1,28 @@
+*{
+    margin: 0 auto;
+}
+body{
+    background: #000;
+}
+#root{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -641px;
+    margin-top: -360px;
+}
+.reaction{
+    color: #FFF;
+    font-size: 80px;
+    text-align: center;
+    position: absolute;
+    bottom: 18px;
+    width: 300px;
+}
+#reaction-love{
+    left: 187px;
+}
+#reaction-like{
+    right: 157px;
+}
+

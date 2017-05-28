@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDG - Nutella X Paçoquinha</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <meta charset="utf-8" />
+    <script>
+        "use strict";
+        var access_token = '1511840965509126|v06elhYe8E6YjY66MtvZgjrlrWg';
+        var postID = '';
+        var refreshTime = 5;
+
+        var reactions = ['LIKE', 'LOVE'/*, 'WOW', 'HAHA', 'SAD', 'ANGRY'*/].map(function (e) {
+            var code = 'reactions_' + e.toLowerCase();
+            return 'reactions.type(' + e + ').limit(0).summary(total_count).as(' + code + ')'
+        }).join(',');
+
+
+        function refreshCounts() {
+            var url = 'https://graph.facebook.com/v2.8/?ids=' + postID + '&fields=' + reactions + '&access_token=' + access_token;
+            $.getJSON(url, function(res){
+                $('#reaction-like').text(0+res[postID].reactions_like.summary.total_count);
+                $('#reaction-love').text(0+res[postID].reactions_love.summary.total_count);
+                /*
+                 $('#reaction-sad').text(0+res[postID].reactions_sad.summary.total_count);
+                 $('#reaction-haha').text(0+res[postID].reactions_haha.summary.total_count);
+                 $('#reaction-angry').text(0+res[postID].reactions_angry.summary.total_count);
+                 $('#reaction-wow').text(0+res[postID].reactions_wow.summary.total_count);
+                */
+            });
+        }
+
+        $(document).ready(function(){
+            setInterval(refreshCounts, refreshTime * 1000);
+            refreshCounts();
+        });
+    </script>
+</head>
+<body>
+<div id="root">
+    <video id="bgvid" playsinline autoplay muted loop>
+        <source src="video/NutellaxPacoquita.mp4" type="video/mp4">
+    </video>
+    <div id="reactions">
+        <div id="reaction-love" class="reaction">0</div>
+        <div id="reaction-like" class="reaction">0</div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica';
+}
+body{
+    background: #DEDA09;
+}
+#root{
+    width: 1280px;
+    height: 768px;
+    left: 50%;
+    top: 50%;
+    margin-left: -640px;
+    margin-top: -384px;
+    display: block;
+    position: absolute;
+    background: url('../images/maradona_pele.jpg') top left no-repeat;
+    background-size: cover;
+}
+#reaction-like, #reaction-love{
+    width: 250px;
+    height: 70px;
+    text-align: center;
+    bottom: 45px;
+    position: absolute;
+    color: #001781;
+    font-size: 60px;
+    background: rgba(255,255,255,0.2);
+}
+#reaction-like{
+    left: 140px;
+}
+#reaction-love{
+    right: 140px;
+}
